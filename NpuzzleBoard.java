@@ -1,10 +1,5 @@
 
-/**
- * Write a description of class NpuzzleBoard here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import java.util.*;
 public class NpuzzleBoard
 {
     private int[][] board;
@@ -12,7 +7,7 @@ public class NpuzzleBoard
     {
         board=new int[4][4];
     }
-    
+
     public void fillBoardCorrect()
     {
         int boardNumber=1;
@@ -28,11 +23,27 @@ public class NpuzzleBoard
             }
         }
     }
-    
+
     public void fillBoardRandom()
     {
+        ArrayList numbers=new ArrayList<Integer>();
+        Random r = new Random();
+        for(int i=0;i<4;i++)
+        {
+            for(int j=0;j<4;j++)
+            {
+                int number=r.nextInt(16);
+                while(numbers.contains(number))
+                {
+                    number=r.nextInt(16);
+                }
+                board[i][j]=number;
+                numbers.add(number);
+            }
+        }
 
     }
+
     public void displayBoard()
     {
         for(int i=0;i<4;i++)
@@ -116,7 +127,6 @@ public class NpuzzleBoard
             }
         }
     }
-
 
     public boolean checkWin()
     {

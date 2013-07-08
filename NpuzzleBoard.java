@@ -130,9 +130,23 @@ public class NpuzzleBoard
 
     public boolean checkWin()
     {
-        //if(board[0][0])
-
-        return false;
+        int boardNumber=1;
+        for(int i=0;i<4;i++)
+        {
+            for(int j=0;j<4;j++)
+            {
+                if(boardNumber==16)
+                {
+                    break;
+                }
+                if(boardNumber!=board[i][j])
+                {
+                    return false;
+                }
+                boardNumber++;
+            }
+        }
+        return true;
     }
 
 }

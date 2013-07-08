@@ -16,6 +16,7 @@ public class Npuzzle
             System.out.println('\f');
             gui.displayBoard();
         }
+        System.out.println("You Win!");
 
     }
 }
